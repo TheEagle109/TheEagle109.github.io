@@ -112,10 +112,6 @@ a {
     background: url(../images/eclipse-left.svg) no-repeat;
     background-position: left;
   }
-
-  .eclipse-right--fill {
-    height: 100vh;
-  }
 }
 
 @media only screen and (min-width: 1300px) {

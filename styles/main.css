@@ -81,7 +81,7 @@ a {
   text-align: center;
   display: flex;
   flex-direction: column;
-  max-width: 250px;
+  max-width: 300px;
 }
 
 .news-card__decoration {
@@ -102,9 +102,9 @@ a {
   }
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1250px) {
   .eclipse-right {
-    background: url(../images/eclipse-right.svg) no-repeat;
+    background: url(../images/eclipse-right.png) no-repeat;
     background-position: right;
   }
 
@@ -171,6 +171,22 @@ header {
 .company-info {
   display: flex;
   align-items: center;
+}
+
+.company-info__name {
+  display: flex;
+  flex-direction: column;
+}
+
+.company-info__name p {
+  margin: 0;
+  font-size: 0.8em;
+  /* text-align: right; */
+  line-height: unset;
+}
+
+.company-info__name h2 {
+  line-height: unset;
 }
 
 .line {
@@ -501,15 +517,20 @@ nav img {
   margin: 0 auto;
 }
 
+.timeline > p:first-of-type {
+  font-size: 0.7em;
+  text-align: center;
+}
+
 .timeline__element {
+  margin-bottom: 50px;
+}
+
+.timeline__element__body {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 50px;
-}
-
-.timeline__element:not(:last-of-type) {
-  margin-bottom: 50px;
 }
 
 .timeline__element__heading {
@@ -517,17 +538,47 @@ nav img {
   color: var(--clr-primary);
 }
 
-.timeline_element__decoration {
+.timeline__element__decoration {
   max-width: 100px;
   transform: scale(1);
+  cursor: pointer;
 }
 
-.timeline_element__decoration.active {
+.timeline__element__info {
+  padding: 10px;
+  font-family: "Yanone Kaffeesatz Light";
+  background-color: var(--clr-background);
+  display: flex;
+  max-width: 450px;
+  gap: 10px;
+  margin: 0 auto;
+  transition: all 0.5s ease-out;
+}
+
+.timeline__element__button {
+  cursor: pointer;
+}
+
+.timeline__element__info > p {
+  margin-bottom: 0;
+}
+
+.timeline__element__info.hidden,
+.timeline__element__body.hidden {
+  display: none;
+}
+
+.timeline__element__info.visuallyHidden,
+.timeline__element__body.visuallyHidden {
+  opacity: 0;
+}
+
+.timeline .timeline__element__decoration.active {
   filter: invert(15%) sepia(91%) saturate(3290%) hue-rotate(216deg)
     brightness(99%) contrast(135%);
 }
 
-.timeline_element__decoration.current {
+.timeline__element__decoration.current {
   animation: pulse 1.5s infinite;
 }
 
